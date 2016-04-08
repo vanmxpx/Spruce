@@ -6,24 +6,23 @@ namespace Spruce
     public abstract class Plant
     {
         private Colors _color;
-        private string _appearance;
+        private Appearances _appearance;
 
-        public Colors Color
+        public virtual Colors Color
         {
             get
             {
                 return _color;
             }
         }
-        public string Appearance
+        public virtual Appearances Appearance
         {
             get
             {
                 return _appearance;
             }
         }
-
-        public abstract void ChangeAppearance(object sender, SeasonsEventArgs e);
+        public abstract void SeasonChanged(object sender, SeasonsEventArgs e);
         public void Grow()
         {
             Console.WriteLine("Growing..");

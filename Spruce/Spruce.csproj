@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Forest.cs" />
     <Compile Include="Props\Seasons.cs" />
-    <Compile Include="Props\Colors.cs" />
+    <Compile Include="Props\Properties.cs" />
     <Compile Include="Props\IPersistent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

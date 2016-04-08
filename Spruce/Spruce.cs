@@ -6,11 +6,25 @@ namespace Spruce
     public class Spruce : Plant, IPersistent
     {
         private const Colors _color = Colors.Green;
-        private const string _appearance = "slim";
+        private const Appearances _appearance = Appearances.Slim;
+        public override Colors Color
+        {
+            get
+            {
+                return _color;
+            }
+        }
+        public override Appearances Appearance
+        {
+            get
+            {
+                return _appearance;
+            }
+        }
 
         public Spruce()
         {
-            Year.SeasonChanged += new EventHandler<SeasonsEventArgs>(ChangeAppearance);
+            Year.SeasonChanged += new EventHandler<SeasonsEventArgs>(SeasonChanged);
         }
 
         public void IgnoreSeason(Seasons _season)
@@ -19,7 +33,7 @@ namespace Spruce
                 _season, Appearance, Color);
         }
 
-        public override void ChangeAppearance(object sender, SeasonsEventArgs e)
+        public override void SeasonChanged(object sender, SeasonsEventArgs e)
         {
             IgnoreSeason(e.CurrentSeason);
         }
