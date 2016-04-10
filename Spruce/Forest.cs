@@ -4,6 +4,16 @@ namespace Spruce
 {
     public class Forest
     {
-        public List<Plant> Trees = new List<Plant>();
+        private List<Plant> _trees;
+        public List<Plant> Trees
+        {
+            get;
+            private set;
+        }
+
+        public Forest()
+        {
+            Trees = new List<Plant>();
+        }
     }
 }

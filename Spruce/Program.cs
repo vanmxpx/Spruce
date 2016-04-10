@@ -8,15 +8,11 @@ namespace Spruce
         static void Main(string[] args)
         {
             Forest _forest = new Forest();
-            _forest.Trees.Add(new Spruce());
-            foreach(var tree in _forest.Trees)
-            {
-                if (tree is Spruce)
-                {
-                    _forest.Trees[0].ToSprout();
-                    _forest.Trees[0].Grow();
-                }
-            }
+            Spruce _fir = new Spruce();
+
+            _forest.Trees.Add(_fir);
+            _forest.Trees[_forest.Trees.IndexOf(_fir)].ToSprout();
+            _forest.Trees[_forest.Trees.IndexOf(_fir)].Grow();
 
             Year.ChangeSeason();
             Year.ChangeSeason();
